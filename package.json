@@ -12,6 +12,7 @@
     "tauri:dev:local": "tauri dev --config src-tauri/tauri.local.conf.json",
     "tauri:build": "tauri build",
     "tauri:build:local": "tauri build --config src-tauri/tauri.local.conf.json",
+    "release": "node tools/release.mjs",
     "smoke": "node tools/smoke.mjs"
   },
   "dependencies": {
