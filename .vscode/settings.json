@@ -1,0 +1,22 @@
+{
+  "editor.formatOnSave": true,
+  "editor.rulers": [100],
+  "files.exclude": {
+    "**/node_modules": true,
+    "src-tauri/target": true
+  },
+  "files.watcherExclude": {
+    "**/node_modules/**": true,
+    "**/src-tauri/target/**": true
+  },
+  "rust-analyzer.check.command": "check",
+  "rust-analyzer.cargo.allTargets": false,
+  "rust-analyzer.linkedProjects": ["src-tauri/Cargo.toml"],
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/dist": true,
+    "src-tauri/target": true
+  }
+}

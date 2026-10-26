@@ -1,0 +1,68 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "VentoNote: dev (Tauri)",
+      "detail": "Собирает Rust и открывает окно приложения с горячей перезагрузкой фронтенда",
+      "type": "shell",
+      "command": "pnpm tauri dev",
+      "isBackground": true,
+      "problemMatcher": [],
+      "group": "build"
+    },
+    {
+      "label": "VentoNote: dev (локальные данные)",
+      "detail": "Данные и WebView2 пишутся в src-tauri/target/<profile>/app-data, а не в %APPDATA%",
+      "type": "shell",
+      "command": "pnpm tauri:dev:local",
+      "isBackground": true,
+      "problemMatcher": []
+    },
+    {
+      "label": "VentoNote: dev (браузер)",
+      "detail": "Только интерфейс на localhost:1420, данные — в localStorage",
+      "type": "shell",
+      "command": "pnpm dev",
+      "isBackground": true,
+      "problemMatcher": []
+    },
+    {
+      "label": "VentoNote: build (release)",
+      "detail": "Собирает установщик NSIS/MSI в src-tauri/target/release/bundle",
+      "type": "shell",
+      "command": "pnpm tauri build",
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "VentoNote: check (Rust)",
+      "detail": "Быстрая проверка типов без линковки",
+      "type": "shell",
+      "command": "cargo check",
+      "options": {
+        "cwd": "${workspaceFolder}/src-tauri"
+      },
+      "problemMatcher": ["$rustc"]
+    },
+    {
+      "label": "VentoNote: test (Rust)",
+      "detail": "Юнит-тесты слоя данных: SQLite, FTS5, поиск по словоформам",
+      "type": "shell",
+      "command": "cargo test --release",
+      "options": {
+        "cwd": "${workspaceFolder}/src-tauri"
+      },
+      "problemMatcher": ["$rustc"]
+    },
+    {
+      "label": "VentoNote: build (frontend)",
+      "detail": "Проверка типов TypeScript и сборка dist/",
+      "type": "shell",
+      "command": "pnpm build",
+      "problemMatcher": ["$tsc"]
+    }
+  ]
+}
