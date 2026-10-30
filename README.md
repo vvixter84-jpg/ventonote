@@ -73,6 +73,12 @@
 `src-tauri/target/<profile>/app-data/` — удобно для тестов и для окружений,
 где запись в `%APPDATA%` запрещена.
 
+## Скачать
+
+Готовый установщик — в [последнем релизе](https://github.com/vvixter84-jpg/ventonote/releases/latest):
+`VentoNote_0.2.1_x64-setup.exe` (2.8 МБ, установка без прав администратора).
+Там же `.msi` и контрольные суммы SHA-256.
+
 ## Команды
 
 ```powershell
