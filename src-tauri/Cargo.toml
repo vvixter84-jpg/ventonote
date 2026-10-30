@@ -1,6 +1,6 @@
 [package]
 name = "ventonote"
-version = "0.2.1"
+version = "0.2.2"
 description = "VentoNote — заметки без хлама"
 authors = ["VentoNote"]
 edition = "2021"
