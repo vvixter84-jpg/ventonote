@@ -1,7 +1,7 @@
 [package]
 name = "ventonote"
-version = "0.1.0"
-description = "VentoNote — заметки без хлама"
+version = "0.2.0"
+description = "VentoNote вЂ” Р·Р°РјРµС‚РєРё Р±РµР· С…Р»Р°РјР°"
 authors = ["VentoNote"]
 edition = "2021"
 rust-version = "1.77"

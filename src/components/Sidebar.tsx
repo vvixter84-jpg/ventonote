@@ -1,5 +1,6 @@
 import { formatDate, pluralizeWords } from "../format";
 import type { NoteSummary, SidebarView } from "../types";
+import BrandMark from "./BrandMark";
 
 interface SidebarProps {
   notes: NoteSummary[];
@@ -35,9 +36,7 @@ export default function Sidebar({
   return (
     <aside className="sidebar">
       <header className="brand">
-        <span className="brand__mark" aria-hidden="true">
-          V
-        </span>
+        <BrandMark size={36} className="brand__mark" />
         <span className="brand__text">
           <span className="brand__name">VentoNote</span>
           <span className="brand__hint">заметки без хлама</span>

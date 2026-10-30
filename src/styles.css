@@ -1,49 +1,51 @@
 :root {
   color-scheme: light;
-  --bg: #f3f5f9;
+  --bg: #f7f4fd;
   --panel: #ffffff;
-  --panel-soft: #eef2f8;
-  --sidebar-bg: rgba(255, 255, 255, 0.74);
-  --text: #161d27;
-  --muted: #6b7788;
-  --line: #e0e6ef;
-  --accent: #2f6fed;
-  --accent-ink: #1c4fbd;
-  --accent-soft: rgba(47, 111, 237, 0.12);
+  --panel-soft: #f1ecfb;
+  --sidebar-bg: rgba(255, 255, 255, 0.76);
+  --text: #1d142c;
+  --muted: #756a8f;
+  --line: #e8e1f6;
+  --accent: #7c3aed;
+  --accent-ink: #6d28d9;
+  --accent-soft: rgba(124, 58, 237, 0.12);
+  --accent-grad: linear-gradient(135deg, #a855f7, #7c3aed 55%, #6d28d9);
   --danger: #c0392b;
   --danger-soft: rgba(192, 57, 43, 0.08);
   --success: #2f9e6f;
   --radius-lg: 16px;
   --radius-md: 10px;
-  --shadow: 0 1px 2px rgba(22, 29, 39, 0.04), 0 10px 30px rgba(22, 29, 39, 0.06);
-  --shadow-lg: 0 24px 60px rgba(15, 22, 33, 0.18);
+  --shadow: 0 1px 2px rgba(29, 20, 44, 0.05), 0 10px 30px rgba(76, 29, 149, 0.1);
+  --shadow-lg: 0 26px 64px rgba(46, 16, 101, 0.22);
   --font: "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, "Inter", sans-serif;
   --mono: "Cascadia Code", "Consolas", "JetBrains Mono", ui-monospace, monospace;
   --editor-font-size: 16px;
   --editor-width: 760px;
-  --glow-1: rgba(47, 111, 237, 0.1);
-  --glow-2: rgba(47, 111, 237, 0.07);
+  --glow-1: rgba(168, 85, 247, 0.14);
+  --glow-2: rgba(124, 58, 237, 0.09);
 }
 
 [data-theme="dark"] {
   color-scheme: dark;
-  --bg: #0f131a;
-  --panel: #161c25;
-  --panel-soft: #1b222c;
-  --sidebar-bg: rgba(20, 26, 34, 0.78);
-  --text: #e7ecf3;
-  --muted: #8e9aab;
-  --line: #26303c;
-  --accent: #5b8cf7;
-  --accent-ink: #82a7ff;
-  --accent-soft: rgba(91, 140, 247, 0.16);
+  --bg: #0d0817;
+  --panel: #171028;
+  --panel-soft: #1f1735;
+  --sidebar-bg: rgba(20, 13, 36, 0.8);
+  --text: #ede8f9;
+  --muted: #9c90b8;
+  --line: #2e2447;
+  --accent: #a78bfa;
+  --accent-ink: #c4b5fd;
+  --accent-soft: rgba(167, 139, 250, 0.16);
+  --accent-grad: linear-gradient(135deg, #c084fc, #a855f7 50%, #7c3aed);
   --danger: #e2685b;
   --danger-soft: rgba(226, 104, 91, 0.12);
   --success: #4bbd8a;
-  --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 14px 34px rgba(0, 0, 0, 0.28);
-  --shadow-lg: 0 28px 70px rgba(0, 0, 0, 0.55);
-  --glow-1: rgba(91, 140, 247, 0.14);
-  --glow-2: rgba(91, 140, 247, 0.08);
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.35), 0 16px 40px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 30px 80px rgba(0, 0, 0, 0.6);
+  --glow-1: rgba(124, 58, 237, 0.28);
+  --glow-2: rgba(192, 132, 252, 0.12);
 }
 
 * {
@@ -118,16 +120,9 @@ button:disabled {
 }
 
 .brand__mark {
-  display: grid;
-  place-items: center;
-  width: 34px;
-  height: 34px;
-  border-radius: 11px;
-  background: linear-gradient(135deg, #4d8bff, #2f6fed 55%, #1c4fbd);
-  box-shadow: 0 6px 16px rgba(47, 111, 237, 0.32);
-  color: #fff;
-  font-size: 17px;
-  font-weight: 700;
+  width: 36px;
+  height: 36px;
+  filter: drop-shadow(0 6px 16px rgba(124, 58, 237, 0.45));
 }
 
 .brand__text {
@@ -220,14 +215,15 @@ button:disabled {
   padding: 9px 12px;
   border: 1px solid transparent;
   border-radius: var(--radius-md);
-  background: var(--accent);
+  background: var(--accent-grad);
+  box-shadow: 0 8px 20px rgba(124, 58, 237, 0.28);
   color: #fff;
   font-weight: 600;
-  transition: background 0.15s ease, transform 0.05s ease;
+  transition: filter 0.15s ease, transform 0.05s ease;
 }
 
 .new-note:hover {
-  background: var(--accent-ink);
+  filter: brightness(1.08);
 }
 
 .new-note:active {
@@ -370,17 +366,10 @@ button:disabled {
 }
 
 .empty-state__mark {
-  display: grid;
-  place-items: center;
-  width: 56px;
-  height: 56px;
+  width: 64px;
+  height: 64px;
   margin-bottom: 6px;
-  border-radius: 18px;
-  background: linear-gradient(135deg, #4d8bff, #2f6fed 55%, #1c4fbd);
-  color: #fff;
-  font-size: 26px;
-  font-weight: 700;
-  opacity: 0.9;
+  filter: drop-shadow(0 10px 24px rgba(124, 58, 237, 0.45));
 }
 
 .empty-state__hint {
@@ -454,9 +443,10 @@ button:disabled {
 
 .editor__toolbar {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
+  gap: 8px;
   padding: 8px 0;
   border-bottom: 1px solid var(--line);
 }
@@ -470,9 +460,9 @@ button:disabled {
 }
 
 .toolbar__button {
-  min-width: 30px;
+  min-width: 28px;
   height: 26px;
-  padding: 0 8px;
+  padding: 0 7px;
   border: none;
   border-radius: 7px;
   background: transparent;
@@ -1042,4 +1032,127 @@ button:disabled {
   .editor__content--split {
     grid-template-columns: minmax(0, 1fr);
   }
+}
+
+/* ------------------------------------------------------------------ */
+/* Чек-листы, стрелки и прочие блоки markdown                         */
+/* ------------------------------------------------------------------ */
+
+.markdown .task-list-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 0.35em 0;
+  list-style: none;
+}
+
+.markdown .task-list-item input[type="checkbox"] {
+  flex: none;
+  width: 17px;
+  height: 17px;
+  margin: 4px 0 0;
+  border: 1.5px solid color-mix(in srgb, var(--accent) 55%, var(--line));
+  border-radius: 5px;
+  background: var(--panel);
+  accent-color: var(--accent);
+  cursor: pointer;
+  appearance: none;
+  transition: background 0.12s ease, border-color 0.12s ease, box-shadow 0.12s ease;
+}
+
+.markdown .task-list-item input[type="checkbox"]:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+.markdown .task-list-item input[type="checkbox"]:checked {
+  border-color: transparent;
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23fff' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round' d='M3.5 8.5l3 3 6-6.5'/%3E%3C/svg%3E")
+      center / 13px no-repeat,
+    var(--accent);
+}
+
+.markdown .task-list-item input[type="checkbox"]:checked + * {
+  color: var(--muted);
+  text-decoration: line-through;
+}
+
+.markdown ul.contains-task-list {
+  padding-left: 0.2em;
+}
+
+.markdown .arrow-list {
+  margin: 0.6em 0 1em;
+  padding: 0;
+  list-style: none;
+}
+
+.markdown .arrow-list li {
+  position: relative;
+  margin: 0.3em 0;
+  padding-left: 1.5em;
+}
+
+.markdown .arrow-list li::before {
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  content: "→";
+  font-weight: 700;
+}
+
+.markdown details {
+  margin: 1em 0;
+  padding: 10px 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--panel-soft);
+}
+
+.markdown summary {
+  color: var(--accent);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.markdown summary::marker {
+  color: var(--accent);
+}
+
+.markdown kbd {
+  padding: 0.1em 0.4em;
+  border: 1px solid var(--line);
+  border-bottom-width: 2px;
+  border-radius: 5px;
+  background: var(--panel);
+  font-family: var(--mono);
+  font-size: 0.85em;
+}
+
+.markdown mark {
+  padding: 0 0.2em;
+  border-radius: 3px;
+  background: color-mix(in srgb, var(--accent) 22%, transparent);
+  color: inherit;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--accent) 28%, transparent);
+}
+
+/* Аккуратное свечение у активного элемента списка в новой гамме */
+.note-item--active {
+  border-color: color-mix(in srgb, var(--accent) 28%, var(--line));
+}
+
+.view-switch__item--active,
+.segmented__item--active,
+.toolbar__button--active {
+  color: var(--accent-ink);
+}
+
+.search:focus,
+.field input[type="range"] {
+  accent-color: var(--accent);
 }
