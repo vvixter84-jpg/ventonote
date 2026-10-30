@@ -3,5 +3,10 @@
   "identifier": "default",
   "description": "Базовые разрешения для главного окна VentoNote",
   "windows": ["main"],
-  "permissions": ["core:default", "dialog:default", "opener:default"]
+  "permissions": [
+    "core:default",
+    "core:window:allow-destroy",
+    "dialog:default",
+    "opener:default"
+  ]
 }

@@ -427,21 +427,34 @@ export default function App() {
   }, [flushSave]);
 
   // Закрытие окна: сначала сохраняем, потом закрываемся.
+  // Важно: после регистрации onCloseRequested окно закрывает уже JS
+  // (destroy), поэтому разрешение core:window:allow-destroy обязательно.
   useEffect(() => {
     if (!isTauri) return;
 
     let unlisten: (() => void) | undefined;
     let disposed = false;
+    const closing = { current: false };
 
     void (async () => {
       const { getCurrentWindow } = await import("@tauri-apps/api/window");
       const window_ = getCurrentWindow();
 
       const stop = await window_.onCloseRequested(async (event) => {
+        // Повторный запрос, пока мы уже закрываемся, не перехватываем.
+        if (closing.current) return;
+
         if (!pending.current) return;
+
+        closing.current = true;
         event.preventDefault();
+
         try {
-          await flushSave();
+          // Даже если сохранение зависло, окно должно закрыться.
+          await Promise.race([
+            flushSave(),
+            new Promise((resolve) => window.setTimeout(resolve, 2000)),
+          ]);
         } finally {
           await window_.destroy();
         }
